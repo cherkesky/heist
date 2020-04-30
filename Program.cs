@@ -6,7 +6,7 @@ namespace heist
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Plan Your Heist!");
         }
     }
 }
