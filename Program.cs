@@ -7,6 +7,8 @@ namespace heist
   {
     static void Main(string[] args)
     {
+      int bankDiffLevel = 100;
+      int memberSkillSum = 0;
 
       Dictionary<string, TeamMember> heistTeam = new Dictionary<string, TeamMember>();
 
@@ -31,8 +33,8 @@ namespace heist
         member.CourageFactor = Convert.ToDouble(Console.ReadLine());
 
         Console.WriteLine("Whats your skill level?");
-
         member.SkillLevel = Int32.Parse(Console.ReadLine());
+        memberSkillSum +=  member.SkillLevel; // aggregating skill level value
 
         heistTeam.Add(member.Name, member);
 
@@ -47,13 +49,18 @@ namespace heist
       foreach(KeyValuePair<string, TeamMember> teamMember in heistTeam){
           System.Console.WriteLine($@"
           Name: {teamMember.Key}, Skill Level: {teamMember.Value.SkillLevel}, Courage Factor: {teamMember.Value.CourageFactor}
-          
           ");
       }
        Console.WriteLine($@"
-       Good Luck!
+ 
       ========================================================
       ");
+
+      if (memberSkillSum>=bankDiffLevel){
+          System.Console.WriteLine($"Success! Your team skill level is {memberSkillSum} and the bank difficulty level was {bankDiffLevel} ");
+      }else{
+          System.Console.WriteLine($"Failure! Your team skill level is {memberSkillSum} and the bank difficulty level was {bankDiffLevel} ");
+      }
 
     }
   }
