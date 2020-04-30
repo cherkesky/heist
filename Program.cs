@@ -12,6 +12,7 @@ namespace heist
 
       Random rnd = new Random();
       int luck = rnd.Next(-10, 11);
+      bankDiffLevel += luck;
 
       Dictionary<string, TeamMember> heistTeam = new Dictionary<string, TeamMember>();
 
@@ -56,17 +57,19 @@ namespace heist
           ");
       }
       Console.WriteLine($@"
- 
+        Team Combined Skill Level: {memberSkillSum}
+        Bank Difficulty Level: {bankDiffLevel}
+
       ========================================================
       ");
 
       if (memberSkillSum >= bankDiffLevel)
       {
-        System.Console.WriteLine($"Success! Your team skill level is {memberSkillSum} and the bank difficulty level was {bankDiffLevel} ");
+        System.Console.WriteLine($@"Success!");
       }
       else
       {
-        System.Console.WriteLine($"Failure! Your team skill level is {memberSkillSum} and the bank difficulty level was {bankDiffLevel} ");
+        System.Console.WriteLine($@"Failure!");
       }
 
     }
