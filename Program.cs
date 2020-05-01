@@ -50,7 +50,7 @@ namespace heist
       Console.WriteLine("How many trials? ");
       int Tries = Convert.ToInt16(Console.ReadLine());
 
-      for (int i = 0; i <= Tries; i++)
+      for (int i = 1; i <= Tries; i++)
       {
         Random rnd = new Random();
         int luck = rnd.Next(-10, 11);
@@ -77,10 +77,12 @@ namespace heist
         if (memberSkillSum >= bankDiffLevel)
         {
           System.Console.WriteLine($@"Success!");
+          successSum++;
         }
         else
         {
           System.Console.WriteLine($@"Failure!");
+          failureSum++;
         }
 
       }
