@@ -10,10 +10,6 @@ namespace heist
       int bankDiffLevel = 100;
       int memberSkillSum = 0;
 
-    //   Random rnd = new Random();
-    //   int luck = rnd.Next(-10, 11);
-    //   bankDiffLevel += luck;
-
       Dictionary<string, TeamMember> heistTeam = new Dictionary<string, TeamMember>();
 
       Console.WriteLine("Plan Your Heist!");
@@ -50,41 +46,42 @@ namespace heist
       Console.WriteLine("How many trials? ");
       int Tries = Convert.ToInt16(Console.ReadLine());
 
-    for (int i=0; i<=Tries; i++){
+      for (int i = 0; i <= Tries; i++)
+      {
         Random rnd = new Random();
-      int luck = rnd.Next(-10, 11);
-      bankDiffLevel += luck;
+        int luck = rnd.Next(-10, 11);
+        bankDiffLevel += luck;
 
-    Console.WriteLine($@"
+        Console.WriteLine($@"
       Cool! So we got {heistTeam.Count} team members on board:
       ========================================================
       ");
 
-      foreach (KeyValuePair<string, TeamMember> teamMember in heistTeam)
-      {
-        System.Console.WriteLine($@"
+        foreach (KeyValuePair<string, TeamMember> teamMember in heistTeam)
+        {
+          System.Console.WriteLine($@"
           Name: {teamMember.Key}, Skill Level: {teamMember.Value.SkillLevel}, Courage Factor: {teamMember.Value.CourageFactor}
           ");
-      }
-      Console.WriteLine($@"
+        }
+        Console.WriteLine($@"
         Team Combined Skill Level: {memberSkillSum}
         Bank Difficulty Level: {bankDiffLevel}
 
       ========================================================
       ");
 
-      if (memberSkillSum >= bankDiffLevel)
-      {
-        System.Console.WriteLine($@"Success!");
-      }
-      else
-      {
-        System.Console.WriteLine($@"Failure!");
+        if (memberSkillSum >= bankDiffLevel)
+        {
+          System.Console.WriteLine($@"Success!");
+        }
+        else
+        {
+          System.Console.WriteLine($@"Failure!");
+        }
+
       }
 
-    }
 
-      
 
     }
   }
