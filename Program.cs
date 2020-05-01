@@ -10,9 +10,9 @@ namespace heist
       int bankDiffLevel = 100;
       int memberSkillSum = 0;
 
-      Random rnd = new Random();
-      int luck = rnd.Next(-10, 11);
-      bankDiffLevel += luck;
+    //   Random rnd = new Random();
+    //   int luck = rnd.Next(-10, 11);
+    //   bankDiffLevel += luck;
 
       Dictionary<string, TeamMember> heistTeam = new Dictionary<string, TeamMember>();
 
@@ -45,7 +45,17 @@ namespace heist
         Console.WriteLine("Team Member Added!");
 
       } // end of While loop
-      Console.WriteLine($@"
+
+
+      Console.WriteLine("How many trials? ");
+      int Tries = Convert.ToInt16(Console.ReadLine());
+
+    for (int i=0; i<=Tries; i++){
+        Random rnd = new Random();
+      int luck = rnd.Next(-10, 11);
+      bankDiffLevel += luck;
+
+    Console.WriteLine($@"
       Cool! So we got {heistTeam.Count} team members on board:
       ========================================================
       ");
@@ -71,6 +81,10 @@ namespace heist
       {
         System.Console.WriteLine($@"Failure!");
       }
+
+    }
+
+      
 
     }
   }
