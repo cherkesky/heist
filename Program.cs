@@ -64,7 +64,7 @@ namespace heist
         foreach (KeyValuePair<string, TeamMember> teamMember in heistTeam)
         {
           System.Console.WriteLine($@"
-          Name: {teamMember.Key}, Skill Level: {teamMember.Value.SkillLevel}, Courage Factor: {teamMember.Value.CourageFactor}
+        Name: {teamMember.Key}, Skill Level: {teamMember.Value.SkillLevel}, Courage Factor: {teamMember.Value.CourageFactor}
           ");
         }
         Console.WriteLine($@"
@@ -76,18 +76,16 @@ namespace heist
 
         if (memberSkillSum >= bankDiffLevel)
         {
-          System.Console.WriteLine($@"Success!");
           successSum++;
         }
         else
         {
-          System.Console.WriteLine($@"Failure!");
           failureSum++;
         }
 
       }
 
-    System.Console.WriteLine($@"
+      System.Console.WriteLine($@"
           Final Report - Success: {successSum}, Failure: {failureSum}
           ");
 
