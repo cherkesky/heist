@@ -7,12 +7,16 @@ namespace heist
   {
     static void Main(string[] args)
     {
-      int bankDiffLevel = 100;
       int memberSkillSum = 0;
+      int successSum = 0;
+      int failureSum = 0;
 
       Dictionary<string, TeamMember> heistTeam = new Dictionary<string, TeamMember>();
 
       Console.WriteLine("Plan Your Heist!");
+
+      Console.WriteLine("Whats the bank difficulty level? ");
+      int bankDiffLevel = Int32.Parse(Console.ReadLine());
 
       while (true)
       {
@@ -81,7 +85,9 @@ namespace heist
 
       }
 
-
+    System.Console.WriteLine($@"
+          Final Report - Success: {successSum}, Failure: {failureSum}
+          ");
 
     }
   }
